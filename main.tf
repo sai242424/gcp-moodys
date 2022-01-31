@@ -25,7 +25,6 @@ resource "google_bigquery_table" "default" {
 
   schema = <<EOF
 [
-  
   {
     "name": "api_version",
     "type": "FLOAT64",
@@ -38,53 +37,47 @@ resource "google_bigquery_table" "default" {
     "mode": "NULLABLE",
     "description": "resource_id"
   },
-    {
+  {
     "name": "headline",
     "type": "STRING",
     "mode": "NULLABLE",
     "description": "headline"
   },
-    {
+  {
     "name": "summary",
     "type": "STRING",
     "mode": "NULLABLE",
     "description": "summary"
   },
-      {
+  {
     "name": "date_published",
     "type": "STRING",
     "mode": "NULLABLE",
     "description": "date_published"
   },
-      {
+  {
     "name": "date_received",
     "type": "STRING",
     "mode": "NULLABLE",
     "description": "date_received"
   },
-      {
+  {
     "name": "published_reason",
     "type": "STRING",
     "mode": "NULLABLE",
     "description": "published_reason"
   },
-      {
+  {
     "name": "deckline",
     "type": "STRING",
     "mode": "NULLABLE",
     "description": "deckline"
   },
-      {
+  {
     "name": "story_language",
     "type": "STRING",
     "mode": "NULLABLE",
     "description": "story_language"
-  },
-      {
-    "name": "images",
-    "type": "STRING",
-    "mode": "REPEATED",
-    "description": "images"
   },
   {
     "name": "images",
@@ -103,7 +96,7 @@ resource "google_bigquery_table" "default" {
 	}
 	]	
   },
-   {
+  {
     "name": "copyright_line",
     "type": "STRING",
     "mode": "NULLABLE",
@@ -115,7 +108,6 @@ resource "google_bigquery_table" "default" {
     "mode": "NULLABLE",
     "description": "body"
   },
-  
   {
     "name": "taxonomy",
     "type": "RECORD",
@@ -148,7 +140,6 @@ resource "google_bigquery_table" "default" {
 		]		
 	},
 	{	
-
 		"name": "location_codes",
 		"type": "RECORD",
 		"mode": "REPEATED",
@@ -176,7 +167,6 @@ resource "google_bigquery_table" "default" {
 		]
 	},
 	{	
-
 		"name": "industry_codes",
 		"type": "RECORD",
 		"mode": "REPEATED",
@@ -231,214 +221,211 @@ resource "google_bigquery_table" "default" {
 		]	
 	}
 	]
-    },
+  },
+  {
+	"name": "organizations",
+	"type": "RECORD",
+	"mode": "REPEATED",
+	"fields" : [
 	{
-		"name": "organizations",
+		"name": "company_name",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "importance",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "exchange",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "symbol",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "identifiers",
 		"type": "RECORD",
 		"mode": "REPEATED",
-		"fields" : [
+		"fields" :  [
 		{
-			"name": "company_name",
+			"name": "name",
 			"type": "STRING",
 			"mode": "NULLABLE"
 		},
 		{
-			"name": "importance",
+			"name": "value",
 			"type": "STRING",
 			"mode": "NULLABLE"
-		},
-		{
-			"name": "exchange",
-			"type": "STRING",
-			"mode": "NULLABLE"
-		},
-		{
-			"name": "symbol",
-			"type": "STRING",
-			"mode": "NULLABLE"
-		},
-		{
-			"name": "identifiers",
-			"type": "RECORD",
-			"mode": "REPEATED",
-			"fields" :  [
-			{
-				"name": "name",
-				"type": "STRING",
-				"mode": "NULLABLE"
-			},
-			{
-				"name": "value",
-				"type": "STRING",
-				"mode": "NULLABLE"
-			}
-			]
 		}
 		]
-	},
-	
+	}
+	]
+  },
+  {
+	"name": "publisher",
+	"type": "RECORD",
+	"fields" : [
 	{
-		"name": "publisher",
+		"name": "provider_code",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "service_code",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "source",
 		"type": "RECORD",
-		"fields" : [
+		"fields" :  [
 		{
-			"name": "provider_code",
+			"name": "long_name",
 			"type": "STRING",
 			"mode": "NULLABLE"
 		},
 		{
-			"name": "service_code",
+			"name": "short_name",
 			"type": "STRING",
 			"mode": "NULLABLE"
 		},
 		{
-			"name": "source",
-			"type": "RECORD",
-			"fields" :  [
-			{
-				"name": "long_name",
-				"type": "STRING",
-				"mode": "NULLABLE"
-			},
-			{
-				"name": "short_name",
-				"type": "STRING",
-				"mode": "NULLABLE"
-			},
-			{
-				"name": "code",
-				"type": "STRING",
-				"mode": "NULLABLE"
-			},
-			{
-				"name": "source_type",
-				"type": "STRING",
-				"mode": "NULLABLE"
-			},
-			{
-				"name": "geographic_origin",
-				"type": "STRING",
-				"mode": "REPEATED"
-			},
-			{
-				"name": "geographic_focus",
-				"type": "STRING",
-				"mode": "NULLABLE"
-			}
-			]
-		}
+			"name": "code",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
 		{
-			"name": "packages",
+			"name": "source_type",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "geographic_origin",
 			"type": "STRING",
 			"mode": "REPEATED"
 		},
 		{
-			"name": "document_origin",
-			"type": "RECORD",
-			"mode": "REPEATED",
-			"fields" : [
-			{
-				"name": "web",
-				"type": "STRING",
-				"mode": "NULLABLE"
-			},
-			{
-				"name": "license",
-				"type": "STRING",
-				"mode": "NULLABLE"
-			}
-			]
+			"name": "geographic_focus",
+			"type": "STRING",
+			"mode": "NULLABLE"
 		}
 		]
 	},
+	{
+		"name": "packages",
+		"type": "STRING",
+		"mode": "REPEATED"
+	},
+	{
+		"name": "document_origin",
+		"type": "RECORD",
+		"mode": "REPEATED",
+		"fields" : [
 		{
-			"name": "vendor_data",
-			"type": "RECORD",
-			"mode": "REPEATED",
-			"fields" : [
-			{
-				"name": "name_space",
-				"type": "STRING",
-				"mode": "NULLABLE"
-			},
-			{
-				"name": "name",
-				"type": "STRING",
-				"mode": "NULLABLE"
-			},
-			{
-				"name": "value",
-				"type": "STRING",
-				"mode": "NULLABLE"
-			}
-		]
+			"name": "web",
+			"type": "STRING",
+			"mode": "NULLABLE"
 		},
-		
-		  {
+		{
+			"name": "license",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		}
+		]
+	}
+	]
+  },
+  {
+	"name": "vendor_data",
+	"type": "RECORD",
+	"mode": "REPEATED",
+	"fields" : [
+	{
+		"name": "name_space",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "name",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "value",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	}
+	]
+  },	
+  {
     "name": "rights",
     "type": "STRING",
     "mode": "NULLABLE",
     "description": "rights"
-	},
-	 {
+  },
+  {
     "name": "source_topness",
     "type": "STRING",
     "mode": "NULLABLE",
     "description": "source_topness"
-	},
-	 {
+  },
+  {
     "name": "business_relevance",
     "type": "STRING",
     "mode": "NULLABLE",
     "description": "business_relevance"
-	},
-	{
+  },
+  {
     "name": "cluster_signature",
     "type": "STRING",
     "mode": "NULLABLE",
     "description": "cluster_signature"
-	},
-	{
+  },
+  {
     "name": "headline_cluster_signature",
     "type": "STRING",
     "mode": "NULLABLE",
     "description": "headline_cluster_signature"
-	},
+  },
   {
-			"name": "signals",
-			"type": "RECORD",
-			"mode": "REPEATED",
-			"fields" : [
-			{
-				"name": "signal_type",
-				"type": "STRING",
-				"mode": "NULLABLE"
-			},
-			{
-				"name": "id",
-				"type": "STRING",
-				"mode": "NULLABLE"
-			},
-			{
-				"name": "data",
-				"type": "RECORD",
-				"mode": "REPEATED",
-				"fields": [ 
-				{
-					"name": "name",
-					"type": "STRING",
-					"mode": "NULLABLE"
-				},
-				{
-					"name": "value",
-					"type": "STRING",
-					"mode": "NULLABLE"
-				}
-				]
-			}
-		]
+	"name": "signals",
+	"type": "RECORD",
+	"mode": "REPEATED",
+	"fields" : [
+	{
+		"name": "signal_type",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "id",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "data",
+		"type": "RECORD",
+		"mode": "REPEATED",
+		"fields": [ 
+		{
+			"name": "name",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "value",
+			"type": "STRING",
+			"mode": "NULLABLE"
 		}
-  
+		]
+	}
+	]
+  }
 ]
 EOF
 
