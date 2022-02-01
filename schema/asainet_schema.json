@@ -1,29 +1,4 @@
-provider "google" {
-  project = "bq-poc-323317"
-  region = "us-central1"
-}
-
-
-resource "google_pubsub_topic" "stream1" {
-  name = "bq-poc-notification"
-
-  message_retention_duration = "86600s"
-}
-
-
-resource "google_bigquery_table" "default" {
-  dataset_id = "json_test"
-  table_id   = "bq_poc_moddys_news_staging"
-
-  time_partitioning {
-    type = "DAY"
-  }
-
-  labels = {
-    env = "default"
-  }
-
-  schema = <<EOF
+schema = <<EOF
 [
   {
     "name": "api_version",
@@ -428,5 +403,3 @@ resource "google_bigquery_table" "default" {
   }
 ]
 EOF
-
-}

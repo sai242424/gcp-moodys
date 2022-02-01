@@ -1,0 +1,315 @@
+schema = <<EOF
+[
+  {
+    "name": "head",
+    "type": "RECORD",
+    "mode": "NULLABLE",
+    "description": "head",
+	"fields" : [
+	{
+		"name": "title",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	}
+	]
+  },
+  {
+    "name": "body",
+    "type": "RECORD",
+    "mode": "NULLABLE",
+    "description": "body",
+	"fields" : [
+	{
+		"name": "head",
+		"type": "RECORD",
+		"mode": "NULLABLE",
+		"fields" : [
+		{
+			"name": "hedline",
+			"type": "RECORD",
+			"mode": "NULLABLE",
+			"fields" : [
+			{
+				"name": "hl1",
+				"type": "STRING",
+				"mode": "NULLABLE"		
+			}
+			]
+		},
+		{
+			"name": "distributor",
+			"type": "STRING",
+			"mode": "NULLABLE",
+		}
+		]
+	},
+	{
+		"name": "content",
+		"type": "STRING",
+		"mode": "NULLABLE",
+		"description": "content",
+	}
+	]
+  },
+  {
+  {
+    "name": "resource",
+    "type": "RECORD",
+    "mode": "NULLABLE",
+    "description": "resource",
+	"fields" : [
+	{
+		"name": "providerName",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "serviceName",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "resourceID",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "publicationTime",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "receivedTime",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "title",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+		{
+		"name": "language",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "description",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "sourceName",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "vendorData",
+		"type": "RECORD",
+		"mode": "REPEATED",
+		"fields" : [
+		{
+			"name": "name_space",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "name",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "value",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		}
+		]
+	},
+	{
+		"name": "companyRecords",
+		"type": "RECORD",
+		"mode": "REPEATED",
+		"fields" : [
+		{
+			"name": "exchange",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "symbol",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "securityIdentifiers",
+			"type": "RECORD",
+			"mode": "REPEATED",
+			"fields" : [
+			{
+				"name": "name",
+				"type": "STRING",
+				"mode": "NULLABLE"
+			},
+			{
+				"name": "value",
+				"type": "STRING",
+				"mode": "NULLABLE"	
+			}
+			]
+		},
+		{
+			"name": "companyName",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "reasonForTagging",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "otherIdentifiers",
+			"type": "RECORD",
+			"mode": "REPEATED",
+			"fields" : [
+			{
+				"name": "name",
+				"type": "STRING",
+				"mode": "NULLABLE"
+			},
+			{
+				"name": "value",
+				"type": "STRING",
+				"mode": "NULLABLE"
+			}
+			]
+		},
+		{
+			"name": "score",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "micExchangeCode",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "tickerHierarchy",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		}
+		]
+	},
+	{
+		"name": "companyCode",
+		"type": "RECORD",
+		"mode": "REPEATED",
+		"fields" : [
+		{
+			"name": "value",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "relevance",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "intrinsic",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "rollup",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		}
+		]
+	},
+	{
+		"name": "subjectCode",
+		"type": "RECORD",
+		"mode": "REPEATED",
+		"fields" : [
+		{
+			"name": "value",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "relevance",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "intrinsic",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "rollup",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		}
+		]
+	},
+	{
+		"name": "industryCode",
+		"type": "RECORD",
+		"mode": "REPEATED",
+		"fields" : [
+		{
+			"name": "value",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "relevance",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "intrinsic",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "rollup",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		}
+		]
+	},
+	{
+		"name": "locationCode",
+		"type": "RECORD",
+		"mode": "REPEATED",
+		"fields" : [
+		{
+			"name": "value",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "relevance",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "intrinsic",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "rollup",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		}
+		]
+	}
+	]
+  }
+]
+EOF

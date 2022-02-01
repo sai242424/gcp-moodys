@@ -1,0 +1,55 @@
+schema = <<EOF
+[
+  {
+    "name": "head",
+    "type": "RECORD",
+    "mode": "NULLABLE",
+    "description": "head",
+	"fields" : [
+	{
+		"name": "title",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	}
+	]
+  },
+  {
+    "name": "body",
+    "type": "RECORD",
+    "mode": "NULLABLE",
+    "description": "body",
+	"fields" : [
+	{
+		"name": "head",
+		"type": "RECORD",
+		"mode": "NULLABLE",
+		"fields" : [
+		{
+			"name": "hedline",
+			"type": "RECORD",
+			"mode": "NULLABLE",
+			"fields" : [
+			{
+				"name": "hl1",
+				"type": "STRING",
+				"mode": "NULLABLE"		
+			}
+			]
+		},
+		{
+			"name": "distributor",
+			"type": "STRING",
+			"mode": "NULLABLE",
+		}
+		]
+	},
+	{
+		"name": "content",
+		"type": "STRING",
+		"mode": "NULLABLE",
+		"description": "content",
+	}
+	]
+  }
+  ]
+EOF
