@@ -1,22 +1,5 @@
 provider "google" {
- alias = "impersonation"
- scopes = [
-   "https://www.googleapis.com/auth/cloud-platform",
-   "https://www.googleapis.com/auth/userinfo.email",
- ]
-}
-
-data "google_service_account_access_token" "default" {
- provider               	= google.impersonation
- target_service_account 	= "51033309152-compute@developer.gserviceaccount.com"
- scopes                 	= ["userinfo-email", "cloud-platform"]
- lifetime               	= "1200s"
-}
-
-provider "google" {
   project = "bq-poc-323317"
-  access_token	= data.google_service_account_access_token.default.access_token
-  request_timeout 	= "60s"
   region = "us-central1"
 }
 
@@ -30,7 +13,7 @@ resource "google_pubsub_topic" "stream1" {
 
 resource "google_bigquery_table" "default" {
   dataset_id = "json_test"
-  table_id   = "bq_poc_moodys_news_staging"
+  table_id   = "bq_poc_moddys_news_staging"
 
   time_partitioning {
     type = "DAY"
