@@ -509,7 +509,7 @@ EOF
 
 }
 
-resource "google_bigquery_table" "default" {
+resource "google_bigquery_table" "output" {
   dataset_id = "json_test"
   table_id   = "bq_poc_moddys_news_output"
 
