@@ -514,7 +514,7 @@ resource "google_bigquery_table" "output" {
   table_id   = "bq_poc_moddys_news_output"
 
   time_partitioning {
-    type = "DAY"
+    type = "YEAR"
   }
 
   labels = {
