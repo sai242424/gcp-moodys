@@ -508,3 +508,189 @@ resource "google_bigquery_table" "default" {
 EOF
 
 }
+
+resource "google_bigquery_table" "default" {
+  dataset_id = "json_test"
+  table_id   = "bq_poc_moddys_news_output"
+
+  time_partitioning {
+    type = "DAY"
+  }
+
+  labels = {
+    env = "default"
+  }
+
+  clustering = ["resource_id","date_published"]
+  
+  schema = <<EOF
+[
+  {
+    "name": "resource_id",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "resource_id"
+  },
+  {
+    "name": "headline",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "headline"
+  },
+  {
+    "name": "summary",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "summary"
+  },
+  {
+    "name": "date_published",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "date_published"
+  },
+  {
+    "name": "zone_published",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "zone_published"
+  },
+  {
+    "name": "date_received",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "date_received"
+  },
+  {
+	"name": "publisher",
+	"type": "RECORD",
+	"fields" : [
+	{
+		"name": "provider_code",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "service_code",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "source",
+		"type": "RECORD",
+		"fields" :  [
+		{
+			"name": "long_name",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "short_name",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "code",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "source_type",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "geographic_origin",
+			"type": "STRING",
+			"mode": "REPEATED"
+		},
+		{
+			"name": "geographic_focus",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		}
+		]
+	},
+	{
+		"name": "packages",
+		"type": "STRING",
+		"mode": "REPEATED"
+	},
+	{
+		"name": "document_origin",
+		"type": "RECORD",
+		"fields" : [
+		{
+			"name": "web",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "license",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		}
+		]
+	}
+	]
+  },
+  {
+	"name": "story_data",
+	"type": "RECORD",
+	"mode": "REPEATED",
+	"fields" : [
+	{
+		"name": "data_type",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "data_values",
+		"type": "RECORD",
+		"mode": "REPEATED",
+		"fields": [ 
+		{
+			"name": "data_name",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "data_id",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "data_date",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "data_zone",
+			"type": "STRING",
+			"mode": "NULLABLE"
+		},
+		{
+			"name": "data",
+			"type": "RECORD",
+			"mode": "REPEATED",
+			"fields": [ 
+			{
+				"name": "name",
+				"type": "STRING",
+				"mode": "NULLABLE"
+			},
+			{
+				"name": "value",
+				"type": "STRING",
+				"mode": "NULLABLE"
+			}
+			]
+		}
+		]
+	}
+	]
+  }
+]
+EOF
+
+}
