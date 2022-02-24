@@ -1,0 +1,7 @@
+projects/_/buckets/development-test-files-bq-poc/notificationConfigs/6	
+development-test-files-bq-poc/.temp-beam-d1b4c8c8-5325-4ea1-9183-dfa093e5f4d8/d4c32ea9-8772-4f8f-96a7-362b4990f8cf/1644203738134137	
+development-test-files-bq-poc/amc-content-archive/content_archive/CONTENGE/2021/main.tf/1644202187094821	
+
+hasPrefix(attributes.objectId,"amc-content-archive/content_archive/")
+
+amc-content-archive/content_archive/CONTENGE/2021/main.tf.bak	

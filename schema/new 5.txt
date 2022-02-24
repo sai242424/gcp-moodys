@@ -1,0 +1,9 @@
+ask them on what basis did they prepare the output json file.
+so there are two input files : xml and rdf 
+there is one final output json file : conteng_output.json 
+
+We need to map every field from conteng_output.json with xml/rdf file 
+currently fields marked with ## in conteng_output.json, not able to map 
+
+Owner for the project bq-poc 
+

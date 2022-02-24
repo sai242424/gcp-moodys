@@ -1,0 +1,678 @@
+[{
+		"name": "api_version",
+		"type": "STRING",
+		"mode": "NULLABLE",
+		"description": "api_version"
+	},
+	{
+		"name": "resource_id",
+		"type": "STRING",
+		"mode": "NULLABLE",
+		"description": "resource_id"
+	},
+	{
+		"name": "date_published",
+		"type": "STRING",
+		"mode": "NULLABLE",
+		"description": "date_published"
+	},
+	{
+		"name": "date_received",
+		"type": "STRING",
+		"mode": "NULLABLE",
+		"description": "date_received"
+	},
+	{
+		"name": "published_reason",
+		"type": "STRING",
+		"mode": "NULLABLE",
+		"description": "published_reason"
+	},
+	{
+		"name": "deckline",
+		"type": "STRING",
+		"mode": "NULLABLE",
+		"description": "deckline"
+	},
+	{
+		"name": "headline",
+		"type": "STRING",
+		"mode": "NULLABLE",
+		"description": "headline"
+	},
+	{
+		"name": "summary",
+		"type": "STRING",
+		"mode": "NULLABLE",
+		"description": "summary"
+	},
+	{
+		"name": "story_link",
+		"type": "STRING",
+		"mode": "NULLABLE",
+		"description": "story_link"
+	},
+	{
+		"name": "copyright_line",
+		"type": "STRING",
+		"mode": "NULLABLE",
+		"description": "copyright_line"
+	},
+	{
+		"name": "story_language",
+		"type": "STRING",
+		"mode": "NULLABLE",
+		"description": "story_language"
+	},
+	{
+		"name": "images",
+		"type": "RECORD",
+		"mode": "REPEATED",
+		"fields": [{
+				"name": "image_file",
+				"type": "STRING",
+				"mode": "NULLABLE"
+			},
+			{
+				"name": "image_caption",
+				"type": "STRING",
+				"mode": "NULLABLE"
+			}
+		]
+	},
+	{
+		"name": "codes",
+		"type": "RECORD",
+		"fields": [{
+					"name": "subject",
+					"type": "RECORD",
+					"mode": "REPEATED",
+					"fields": [{
+								"name": "long_name",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "short_name",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "code",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "relevance",
+								"type": "RECORD",
+								"mode": "REPEATED",
+								"fields": [{
+										"name": "simple",
+										"type": "STRING",
+										"mode": "NULLABLE"
+									},
+									{
+										"name": "intrinsic",
+										"type": "STRING",
+										"mode": "NULLABLE"
+									},
+									{
+										"name": "rollup",
+										"type": "STRING",
+										"mode": "NULLABLE"
+									}
+								]
+							},
+							{
+								"name": "industry",
+								"type": "RECORD",
+								"mode": "REPEATED",
+								"fields": [{
+										"name": "long_name",
+										"type": "STRING",
+										"mode": "NULLABLE"
+									},
+									{
+										"name": "short_name",
+										"type": "STRING",
+										"mode": "NULLABLE"
+									},
+									{
+										"name": "code",
+										"type": "STRING",
+										"mode": "NULLABLE"
+									},
+									{
+										"name": "relevance",
+										"type": "STRING",
+										"mode": "NULLABLE",
+										"fields": [{
+												"name": "simple",
+												"type": "STRING",
+												"mode": "NULLABLE"
+											},
+											{
+												"name": "intrinsic",
+												"type": "STRING",
+												"mode": "NULLABLE"
+											},
+											{
+												"name": "rollup",
+												"type": "STRING",
+												"mode": "NULLABLE"
+											}
+										]
+									}
+								]
+							},
+							{
+								"name": "short_company",
+								"type": "RECORD",
+								"mode": "REPEATED",
+								"fields": [{
+										"name": "code",
+										"type": "STRING",
+										"mode": "NULLABLE"
+									},
+									{
+										"name": "relevance",
+										"type": "STRING",
+										"mode": "NULLABLE",
+										"fields": [{
+												"name": "simple",
+												"type": "STRING",
+												"mode": "NULLABLE"
+											},
+											{
+												"name": "intrinsic",
+												"type": "STRING",
+												"mode": "NULLABLE"
+											},
+											{
+												"name": "rollup",
+												"type": "STRING",
+												"mode": "NULLABLE"
+											}
+										]
+									}
+								]
+							},
+							{
+								"name": "people",
+								"type": "RECORD",
+								"mode": "REPEATED",
+								"fields": [{
+											"name": "name",
+											"type": "STRING",
+											"mode": "NULLABLE"
+										},
+										{
+											"name": "code",
+											"type": "STRING",
+											"mode": "NULLABLE"
+										},
+										{
+											"name": "affiliation",
+											"type": "STRING",
+											"mode": "NULLABLE",
+											"fields": [{
+													"name": "name",
+													"type": "STRING",
+													"mode": "NULLABLE"
+												},
+												{
+													"name": "value",
+													"type": "STRING",
+													"mode": "NULLABLE"
+												},
+												{
+													"name": "other_identifiers",
+													"type": "STRING",
+													"mode": "NULLABLE",
+													"fields": [{
+															"name": "name",
+															"type": "STRING",
+															"mode": "NULLABLE"
+														},
+														{
+															"name": "value",
+															"type": "STRING",
+															"mode": "NULLABLE"
+														}
+													]
+
+												}
+											]
+										},
+										{
+											"name": "organizations",
+											"type": "RECORD",
+											"mode": "REPEATED",
+											"fields": [{
+													"name": "company_name",
+													"type": "STRING",
+													"mode": "NULLABLE"
+												},
+												{
+													"name": "importance",
+													"type": "STRING",
+													"mode": "NULLABLE"
+												},
+												{
+													"name": "reason_for_tagging",
+													"type": "STRING",
+													"mode": "NULLABLE"
+												},
+												{
+													"name": "exchange",
+													"type": "STRING",
+													"mode": "NULLABLE"
+												},
+												{
+													"name": "symbol",
+													"type": "STRING",
+													"mode": "NULLABLE"
+												},
+												{
+													"name": "identifiers",
+													"type": "RECORD",
+													"mode": "REPEATED",
+													"fields": [{
+															"name": "name",
+															"type": "STRING",
+															"mode": "NULLABLE"
+														},
+														{
+															"name": "value",
+															"type": "STRING",
+															"mode": "NULLABLE"
+														}, {
+															"name": "other_identifiers",
+															"type": "RECORD",
+															"mode": "REPEATED",
+															"fields": [{
+																	"name": "name",
+																	"type": "STRING",
+																	"mode": "NULLABLE"
+																},
+																{
+																	"name": "value",
+																	"type": "STRING",
+																	"mode": "NULLABLE"
+																}, {
+																	"name": "adr_ticker",
+																	"type": "STRING",
+																	"mode": "NULLABLE"
+																}, {
+																	"name": "parent_indicator",
+																	"type": "STRING",
+																	"mode": "NULLABLE"
+																}, {
+																	"name": "adr_ticker_indicator",
+																	"type": "STRING",
+																	"mode": "NULLABLE"
+																}, {
+																	"name": "mic_exchange_code",
+																	"type": "STRING",
+																	"mode": "NULLABLE"
+																}, {
+																	"name": "ticker_hierarchy",
+																	"type": "STRING",
+																	"mode": "NULLABLE"
+																}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"name": "locations",
+											"type": "RECORD",
+											"mode": "NULLABLE",
+											"fields": [{
+														"name": "long_name",
+														"type": "STRING",
+														"mode": "NULLABLE"
+													},
+													{
+														"name": "short_name",
+														"type": "STRING",
+														"mode": "NULLABLE"
+													},
+													{
+														"name": "code",
+														"type": "STRING",
+														"mode": "NULLABLE"
+													},
+													{
+														"name": "relevance",
+														"type": "STRING",
+														"fields": [{
+																"name": "simple",
+																"type": "STRING",
+																"mode": "NULLABLE"
+															},
+															{
+																"name": "intrinsic",
+																"type": "STRING",
+																"mode": "NULLABLE"
+															},
+															{
+																"name": "rollup",
+																"type": "STRING",
+																"mode": "NULLABLE"
+															}
+														]
+													},
+													{
+														"name": "provider_information",
+														"type": "STRING",
+														"mode": "REPEATED",
+														"fields": [{
+																	"name": "provider",
+																	"type": "STRING",
+																	"mode": "NULLABLE",
+																	"fields": [{
+																				"name": "name",
+																				"type": "STRING",
+																				"mode": "NULLABLE"
+																			},
+																			{
+																				"name": "code",
+																				"type": "STRING",
+																				"mode": "NULLABLE"
+																			},
+																			{
+																				"name": "service",
+																				"type": "STRING",
+																				"mode": "NULLABLE",
+																				"fields": [{
+																						"name": "name",
+																						"type": "STRING",
+																						"mode": "NULLABLE"
+																					},
+																					{
+																						"name": "code",
+																						"type": "STRING",
+																						"mode": "NULLABLE"
+																					}
+																				]
+																			},
+																			{
+																				"name": "source",
+																				"type": "STRING",
+																				"mode": "NULLABLE",
+																				"fields": [{
+																							"name": "long_name",
+																							"type": "STRING",
+																							"mode": "NULLABLE"
+																						},
+																						{
+																							"name": "short_name",
+																							"type": "STRING",
+																							"mode": "NULLABLE"
+																						},
+																						{
+																							"name": "source_code",
+																							"type": "STRING",
+																							"mode": "NULLABLE"
+																						},
+																						{
+																							"name": "source_type",
+																							"type": "STRING",
+																							"mode": "NULLABLE",
+																							"fields": [{
+																										"name": "name",
+																										"type": "STRING",
+																										"mode": "NULLABLE"
+																									},
+																									{
+																										"name": "value",
+																										"type": "STRING",
+																										"mode": "NULLABLE"
+																									},
+																									{
+																										"name": "source_subject",
+																										"type": "STRING",
+																										"mode": "NULLABLE",
+																										"fields": [{
+																													"name": "name",
+																													"type": "STRING",
+																													"mode": "NULLABLE"
+																												},
+																												{
+																													"name": "value",
+																													"type": "STRING",
+																													"mode": "NULLABLE"
+																												},
+																												{
+																													"name": "source_industry",
+																													"type": "STRING",
+																													"mode": "NULLABLE",
+																													"fields": [{
+																																"name": "name",
+																																"type": "STRING",
+																																"mode": "NULLABLE"
+																															},
+																															{
+																																"name": "value",
+																																"type": "STRING",
+																																"mode": "NULLABLE"
+																															},
+																															{
+																																"name": "source_topness",
+																																"type": "STRING",
+																																"mode": "NULLABLE"
+																															},
+																															{
+																																"name": "rights",
+																																"type": "STRING",
+																																"mode": "NULLABLE",
+																																"fields": [{
+																																			"name": "name",
+																																			"type": "STRING",
+																																			"mode": "NULLABLE"
+																																		},
+																																		{
+																																			"name": "value",
+																																			"type": "STRING",
+																																			"mode": "NULLABLE"
+																																		},
+																																		{
+																																			"name": "media_type",
+																																			"type": "STRING",
+																																			"mode": "NULLABLE",
+																																			"fields": [{
+																																						"name": "name",
+																																						"type": "STRING",
+																																						"mode": "NULLABLE"
+																																					},
+																																					{
+																																						"name": "value",
+																																						"type": "STRING",
+																																						"mode": "NULLABLE"
+																																					},
+																																					{
+																																						"name": "geographic_origin",
+																																						"type": "STRING",
+																																						"mode": "NULLABLE",
+																																						"fields": [{
+																																								"name": "long_name",
+																																								"type": "STRING",
+																																								"mode": "NULLABLE"
+																																							},
+																																							{
+																																								"name": "short_name",
+																																								"type": "STRING",
+																																								"mode": "NULLABLE"
+																																							},
+																																							{
+																																								"name": "code",
+																																								"type": "STRING",
+																																								"mode": "NULLABLE"
+																																							},
+																																							{
+																																								"name": "geographic_focus",
+																																								"type": "STRING",
+																																								"mode": "NULLABLE",
+																																								"fields": [{
+																																										"name": "long_name",
+																																										"type": "STRING",
+																																										"mode": "NULLABLE"
+																																									},
+																																									{
+																																										"name": "short_name",
+																																										"type": "STRING",
+																																										"mode": "NULLABLE"
+																																									},
+																																									{
+																																										"name": "code",
+																																										"type": "STRING",
+																																										"mode": "NULLABLE"
+																																									}
+																																								]
+																																							}, {
+																																								"name": "packages",
+																																								"type": "STRING",
+																																								"mode": "REPEATED"
+
+																																							}
+																																						] {
+																																							"name": "vendor_data",
+																																							"type": "RECORD",
+																																							"mode": "REPEATED",
+																																							"fields": [{
+																																									"name": "name_space",
+																																									"type": "STRING",
+																																									"mode": "NULLABLE"
+																																								},
+																																								{
+																																									"name": "long_name",
+																																									"type": "STRING",
+																																									"mode": "NULLABLE"
+																																								},
+																																								{
+																																									"name": "short_name",
+																																									"type": "STRING",
+																																									"mode": "NULLABLE"
+																																								},
+																																								{
+																																									"name": "label",
+																																									"type": "STRING",
+																																									"mode": "NULLABLE"
+																																								} {
+																																									"name": "value",
+																																									"type": "STRING",
+																																									"mode": "NULLABLE"
+																																								}
+																																							] {
+																																								"name": "business_relevance",
+																																								"type": "STRING",
+																																								"mode": "NULLABLE",
+																																								"description": "business_relevance"
+																																							},
+																																							{
+																																								"name": "cluster_signature",
+																																								"type": "STRING",
+																																								"mode": "NULLABLE",
+																																								"description": "cluster_signature"
+																																							},
+																																							{
+																																								"name": "headline_cluster_signature",
+																																								"type": "STRING",
+																																								"mode": "NULLABLE",
+																																								"description": "headline_cluster_signature"
+																																							},
+
+																																							{
+																																								"name": "story_data",
+																																								"type": "RECORD",
+																																								"mode": "REPEATED",
+																																								"fields": [{
+																																										"name": "data_type",
+																																										"type": "STRING",
+																																										"mode": "NULLABLE"
+																																									},
+																																									{
+																																										"name": "data_values",
+																																										"type": "RECORD",
+																																										"mode": "REPEATED",
+																																										"fields": [{
+																																												"name": "data_name",
+																																												"type": "STRING",
+																																												"mode": "NULLABLE"
+																																											},
+																																											{
+																																												"name": "data_id",
+																																												"type": "STRING",
+																																												"mode": "NULLABLE"
+																																											},
+																																											{
+																																												"name": "data_date",
+																																												"type": "STRING",
+																																												"mode": "NULLABLE"
+																																											},
+																																											{
+																																												"name": "data",
+																																												"type": "RECORD",
+																																												"mode": "REPEATED",
+																																												"fields": [{
+																																														"name": "name",
+																																														"type": "STRING",
+																																														"mode": "NULLABLE"
+																																													},
+																																													{
+																																														"name": "value",
+																																														"type": "STRING",
+																																														"mode": "NULLABLE"
+																																													}
+																																												]
+																																											}
+																																										]
+																																									}
+																																								]
+																																							},
+																																							{
+																																								"name": "signals",
+																																								"type": "RECORD",
+																																								"mode": "REPEATED",
+																																								"fields": [{
+																																										"name": "signal_type",
+																																										"type": "STRING",
+																																										"mode": "NULLABLE"
+																																									},
+																																									{
+																																										"name": "signal_id",
+																																										"type": "STRING",
+																																										"mode": "NULLABLE"
+																																									},
+																																									{
+																																										"name": "signal_date",
+																																										"type": "STRING",
+																																										"mode": "NULLABLE"
+																																									},
+																																									{
+																																										"name": "data",
+																																										"type": "RECORD",
+																																										"mode": "REPEATED",
+																																										"fields": [{
+																																												"name": "name",
+																																												"type": "STRING",
+																																												"mode": "NULLABLE"
+																																											},
+																																											{
+																																												"name": "value",
+																																												"type": "STRING",
+																																												"mode": "NULLABLE"
+																																											}
+																																										]
+																																									}
+																																								] {
+																																									"name": "body",
+																																									"type": "STRING",
+																																									"mode": "NULLABLE",
+																																									"description": "body"
+																																								},
+																																							}
+																																						]

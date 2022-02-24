@@ -1,0 +1,1 @@
+gs://development-test-files-bq-poc/amc-content-archive/content_archive/*/*/*

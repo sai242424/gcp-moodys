@@ -1,0 +1,9 @@
+bucketId
+eventTime
+eventType
+notificationConfig
+objectGeneration
+objectId
+payloadFormat
+
+hasPrefix(attributes.objectId,"amc-content-archive/content_archive/")

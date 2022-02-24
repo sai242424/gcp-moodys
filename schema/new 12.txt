@@ -1,0 +1,168 @@
+{
+    "version": "0.5",
+    "resource_id": "",
+    "date_published": "2021-09-11T18:02:39.932Z",
+    "date_received": "2021-09-11T18:02:39.932Z",
+    "published_reason": "",
+    "deckline": "",
+    "headline": "",
+    "summary": "",
+    "story_link": "",
+    "copyright_line": "",
+    "story_language": "",
+    "images": [{
+        "image_file": "",
+        "image_caption": ""
+    }],
+    "codes": {
+        "subject": [{
+            "long_name": "",
+            "short_name": "",
+            "code": "",
+            "relevance": [{
+                "simple": "7",
+                "intrinsic": "55",
+                "rollup": "78"
+            }]
+        }],
+        "industry": [{
+            "long_name": "",
+            "short_name": "",
+            "code": "",
+            "relevance": [{
+                "simple": "7",
+                "intrinsic": "55",
+                "rollup": "78"
+            }]
+        }],
+        "short_company": [{
+            "code": "",
+            "relevance": [{
+                "simple": "7",
+                "intrinsic": "55",
+                "rollup": "78"
+            }]
+        }]
+    },
+    "people": [{
+        "name": "",
+        "code": "",
+        "affiliation": [{
+            "name": "",
+            "value": ""
+        }],
+        "other_identifiers": [{
+            "name": "",
+            "value": ""
+        }]
+    }],
+    "organizations": [{
+        "company_name": "",
+        "importance": "mention",
+        "reason_for_tagging": "",
+        "exchange": "",
+        "symbol": "",
+        "identifiers": [{
+            "name": "",
+            "value": ""
+        }],
+        "other_identifiers": [{
+            "name": "",
+            "value": ""
+        }],
+        "adr_ticker": "",
+        "parent_indicator": "",
+        "adr_ticker_indicator": "",
+        "mic_exchange_code": "",
+        "ticker_hierarchy": ""
+    }],
+    "locations": [{
+        "long_name": "",
+        "short_name": "",
+        "code": "",
+        "relevance": [{
+                "simple": "7",
+                "intrinsic": "55",
+                "rollup": "78"
+        }]
+    }],
+    "provider_information": {
+        "provider": {
+            "name": "",
+            "code": ""
+        },
+        "service": {
+            "name": "",
+            "code": ""
+        },
+        "source": {
+            "long_name": "",
+            "short_name": "",
+            "source_code": "",
+            "source_type": {
+                "name": "",
+                "value": ""
+            },
+            "source_subject": [{
+                "name": "",
+                "value": ""
+            }],
+            "source_industry": [{
+                "name": "",
+                "value": ""
+            }],
+            "source_topness": "",
+            "rights": [{
+                "name": "",
+                "value": ""
+            }],
+            "media_type": {
+                "name": "",
+                "value": ""
+            },
+            "geographic_origin": [{
+                "long_name": "",
+                "short_name": "",
+                "code": ""
+            }],
+            "geographic_focus": [{
+                "long_name": "",
+                "short_name": "",
+                "code": ""
+            }]
+        },
+        "packages": []
+    },
+    "vendor_data": [{
+        "name_space": "",
+        "long_name": "",
+        "short_name": "",
+        "label": "",
+        "value": ""
+    }],
+    "business_relevance": "",
+    "cluster_signature": "",
+    "headline_cluster_signature": "",
+    "story_data": [{
+        "data_type": "",
+        "data_values": [{
+            "data_name": "",
+            "data_id": "",
+            "data_date": "2021-09-11T18:02:39.932Z",
+            "data": [{
+                "name": "",
+                "value": ""
+            }]
+        }]
+    }],
+    "signals": [{
+        "signal_type": "event",
+        "signal_id": "",
+        "signal_date": "2021-09-11T18:02:39.932Z",
+        "data": [{
+            "name": "",
+            "value": ""
+        }]
+    }],
+    "body": ""
+}
