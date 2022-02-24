@@ -740,7 +740,7 @@ resource "google_bigquery_table" "final" {
   table_id   = "bq_poc_moodys_news_final"
 
   time_partitioning {
-    type = "MONTH",
+    type = "MONTH"
 	field = "date_published"
   }
 
