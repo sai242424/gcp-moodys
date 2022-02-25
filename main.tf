@@ -6,6 +6,8 @@ provider "google" {
 
 resource "google_pubsub_topic" "stream1" {
   name = "bq-poc-notification"
+  
+   deletion_protection = false
 
   message_retention_duration = "86600s"
 }
@@ -13,6 +15,7 @@ resource "google_pubsub_topic" "stream1" {
 
 resource "google_bigquery_table" "ingestion" {
   dataset_id = "json_test"
+  deletion_protection = false
   table_id   = "bq_poc_moodys_news_ingestion"
 
   time_partitioning {
@@ -739,6 +742,7 @@ EOF
 resource "google_bigquery_table" "final" {
   dataset_id = "json_test"
   table_id   = "bq_poc_moodys_news_final"
+  deletion_protection = false
 
   time_partitioning {
     type = "MONTH"
