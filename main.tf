@@ -75,13 +75,13 @@ resource "google_bigquery_table" "ingestion" {
   },
   {
     "name": "date_published",
-    "type": "STRING",
+    "type": "TIMESTAMP",
     "mode": "NULLABLE",
     "description": "date_published"
   },
   {
     "name": "date_received",
-    "type": "STRING",
+    "type": "TIMESTAMP",
     "mode": "NULLABLE",
     "description": "date_received"
   },
@@ -801,13 +801,13 @@ resource "google_bigquery_table" "final" {
   },
   {
     "name": "date_published",
-    "type": "STRING",
+    "type": "TIMESTAMP",
     "mode": "NULLABLE",
     "description": "date_published"
   },
   {
     "name": "date_received",
-    "type": "STRING",
+    "type": "TIMESTAMP",
     "mode": "NULLABLE",
     "description": "date_received"
   },
