@@ -6,9 +6,6 @@ provider "google" {
 
 resource "google_pubsub_topic" "stream1" {
   name = "bq-poc-notification"
-  
-   deletion_protection = false
-
   message_retention_duration = "86600s"
 }
 
