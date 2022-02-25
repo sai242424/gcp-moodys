@@ -13,7 +13,7 @@ resource "google_pubsub_topic" "stream1" {
 resource "google_bigquery_table" "ingestion" {
   dataset_id = "json_test"
   deletion_protection = false
-  table_id   = "bq_poc_moodys_news_ingestion"
+  table_id   = "bq_poc_moodys_news_ingestion_1"
 
   time_partitioning {
     type = "DAY"
@@ -738,11 +738,11 @@ EOF
 
 resource "google_bigquery_table" "final" {
   dataset_id = "json_test"
-  table_id   = "bq_poc_moodys_news_final"
+  table_id   = "bq_poc_moodys_news_final_1"
   deletion_protection = false
 
   time_partitioning {
-    type = "MONTH"
+    type = "WEEK"
 	field = "date_published"
   }
 
