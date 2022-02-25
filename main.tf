@@ -16,7 +16,7 @@ resource "google_bigquery_table" "ingestion" {
   table_id   = "bq_poc_moodys_news_ingestion"
 
   time_partitioning {
-    type = "MONTH"
+    type = "DAY"
   }
 
   labels = {
@@ -106,7 +106,7 @@ resource "google_bigquery_table" "ingestion" {
 		"type": "STRING",
 		"mode": "NULLABLE"
 	}
-	]	
+	]
   },
   {
     "name": "codes",
@@ -135,7 +135,7 @@ resource "google_bigquery_table" "ingestion" {
 		},
 		{
 			"name": "relevance",
-			"type": "STRING"
+			"type": "INTEGER",
 			"mode": "REPEATED"
 		}
 		]
@@ -162,7 +162,7 @@ resource "google_bigquery_table" "ingestion" {
 		},
 		{
 			"name": "relevance",
-			"type": "STRING",
+			"type": "INTEGER",
 			"mode": "NULLABLE"
 		}
 		]
@@ -179,11 +179,12 @@ resource "google_bigquery_table" "ingestion" {
 		},
 		{
 			"name": "relevance",
-			"type": "STRING",
+			"type": "INTEGER",
 			"mode": "NULLABLE"
 		}	
 		]	
 	}
+    ]
   },
   {
 	"name": "organizations",
@@ -293,12 +294,12 @@ resource "google_bigquery_table" "ingestion" {
 	},
 	{
 		"name": "relevance",
-		"type": "STRING",
+		"type": "INTEGER",
 		"mode": "NULLABLE"
 	}
 	]
   },
-   {
+  {
 	"name": "people",
 	"type": "RECORD",
 	"mode": "REPEATED",
@@ -371,7 +372,7 @@ resource "google_bigquery_table" "ingestion" {
 	},
 	{
 		"name": "relevance",
-		"type": "STRING",
+		"type": "INTEGER",
 		"mode": "NULLABLE"
 	},
 	{
@@ -381,12 +382,12 @@ resource "google_bigquery_table" "ingestion" {
 		"fields": [
 		{
 			"name": "lat",
-			"type": "STRING",
+			"type": "FLOAT",
 			"mode": "NULLABLE"
 		},
 		{
 			"name": "lon",
-			"type": "STRING",
+			"type": "FLOAT",
 			"mode": "NULLABLE"
 		}
 		]
@@ -585,8 +586,8 @@ resource "google_bigquery_table" "ingestion" {
 				"mode": "NULLABLE"
 			}
 			]
-		]
-		},
+        }    
+	]
 	},	
 	{
 		"name": "packages",
@@ -831,7 +832,7 @@ resource "google_bigquery_table" "final" {
 		"type": "STRING",
 		"mode": "NULLABLE"
 	}
-	]	
+	]
   },
   {
     "name": "codes",
@@ -860,7 +861,7 @@ resource "google_bigquery_table" "final" {
 		},
 		{
 			"name": "relevance",
-			"type": "STRING"
+			"type": "INTEGER",
 			"mode": "REPEATED"
 		}
 		]
@@ -887,7 +888,7 @@ resource "google_bigquery_table" "final" {
 		},
 		{
 			"name": "relevance",
-			"type": "STRING",
+			"type": "INTEGER",
 			"mode": "NULLABLE"
 		}
 		]
@@ -904,11 +905,12 @@ resource "google_bigquery_table" "final" {
 		},
 		{
 			"name": "relevance",
-			"type": "STRING",
+			"type": "INTEGER",
 			"mode": "NULLABLE"
 		}	
 		]	
 	}
+    ]
   },
   {
 	"name": "organizations",
@@ -1018,12 +1020,12 @@ resource "google_bigquery_table" "final" {
 	},
 	{
 		"name": "relevance",
-		"type": "STRING",
+		"type": "INTEGER",
 		"mode": "NULLABLE"
 	}
 	]
   },
-   {
+  {
 	"name": "people",
 	"type": "RECORD",
 	"mode": "REPEATED",
@@ -1096,7 +1098,7 @@ resource "google_bigquery_table" "final" {
 	},
 	{
 		"name": "relevance",
-		"type": "STRING",
+		"type": "INTEGER",
 		"mode": "NULLABLE"
 	},
 	{
@@ -1106,12 +1108,12 @@ resource "google_bigquery_table" "final" {
 		"fields": [
 		{
 			"name": "lat",
-			"type": "STRING",
+			"type": "FLOAT",
 			"mode": "NULLABLE"
 		},
 		{
 			"name": "lon",
-			"type": "STRING",
+			"type": "FLOAT",
 			"mode": "NULLABLE"
 		}
 		]
@@ -1310,8 +1312,8 @@ resource "google_bigquery_table" "final" {
 				"mode": "NULLABLE"
 			}
 			]
-		]
-		},
+        }    
+	]
 	},	
 	{
 		"name": "packages",
